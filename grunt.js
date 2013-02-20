@@ -1,8 +1,10 @@
 module.exports = function(grunt) {
 	var _browsers = [
 		{
-			browserName: 'firefox'
-		},
+			browserName: 'Android',
+			platform: 'linux',
+			version: '4'
+		}/*,
 		{
 			browserName: 'googlechrome',
 			platform: 'linux'
@@ -40,6 +42,7 @@ module.exports = function(grunt) {
 			browserName: 'opera',
 			version: '12'
 		}
+    */
 	];
 
 	grunt.initConfig({
