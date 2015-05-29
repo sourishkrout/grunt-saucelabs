@@ -20,7 +20,7 @@ module.exports = function (grunt, options) {
     return utils
     .makeRequest({
       method: 'PUT',
-      url: ['https://saucelabs.com/rest/v1', user, 'jobs', jobId].join('/'),
+      url: ['https://sebastian.dev.saucelabs.net/rest/v1', user, 'jobs', jobId].join('/'),
       auth: { user: user, pass: pass },
       json: attributes
     });

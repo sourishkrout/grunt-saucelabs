@@ -16,7 +16,7 @@ module.exports = function (grunt) {
     utils
     .makeRequest({
       method: 'PUT',
-      url: ['https://saucelabs.com/rest/v1', user, 'jobs', result.job_id].join('/'),
+      url: ['https://sebastian.dev.saucelabs.net/rest/v1', user, 'jobs', result.job_id].join('/'),
       auth: { user: user, pass: pass },
       json: { passed: !result.passed }
     })
