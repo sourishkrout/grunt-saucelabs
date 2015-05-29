@@ -90,19 +90,7 @@ module.exports = function (grunt) {
 
         if (arg.tunneled) {
           deferred = Q.defer();
-
-          tunnel = createTunnel(arg);
-          tunnel.start(function (succeeded) {
-            if (!succeeded) {
-              deferred.reject('Could not create tunnel to Sauce Labs');
-            } else {
-              reportProgress({
-                type: 'tunnelOpened'
-              });
-
-              deferred.resolve();
-            }
-          });
+          deferred.resolve();
           return deferred.promise;
         }
       })
