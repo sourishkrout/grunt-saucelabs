@@ -50,37 +50,6 @@ module.exports = function (grunt) {
     }
   }
 
-  function createTunnel(arg) {
-    var tunnel;
-
-    reportProgress({
-      type: 'tunnelOpen'
-    });
-
-    tunnel = new SauceTunnel(arg.username, arg.key, arg.identifier, true, ['-P', '0'].concat(arg.tunnelArgs));
-
-    ['write', 'writeln', 'error', 'ok', 'debug'].forEach(function (method) {
-      tunnel.on('log:' + method, function (text) {
-        reportProgress({
-          type: 'tunnelEvent',
-          verbose: false,
-          method: method,
-          text: text
-        });
-      });
-      tunnel.on('verbose:' + method, function (text) {
-        reportProgress({
-          type: 'tunnelEvent',
-          verbose: true,
-          method: method,
-          text: text
-        });
-      });
-    });
-
-    return tunnel;
-  }
-
   function runTask(arg, framework, callback) {
     var tunnel;
 
